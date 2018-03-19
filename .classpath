@@ -3,5 +3,6 @@
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="lib" path="D:/Users/zhonghua.wu/.m2/repository/io/netty/netty-all/5.0.0.Alpha1/netty-all-5.0.0.Alpha1.jar"/>
+	<classpathentry kind="lib" path="D:/Users/zhonghua.wu/.m2/repository/org/msgpack/msgpack/0.6.12/msgpack-0.6.12.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
