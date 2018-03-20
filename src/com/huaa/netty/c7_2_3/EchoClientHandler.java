@@ -1,6 +1,6 @@
 package com.huaa.netty.c7_2_3;
 
-import com.huaa.netty.c6_1_2.UserInfo;
+import com.huaa.netty.c6_1_3.UserInfo;
 
 import io.netty.channel.ChannelHandlerAdapter;
 import io.netty.channel.ChannelHandlerContext;
@@ -17,6 +17,7 @@ public class EchoClientHandler extends ChannelHandlerAdapter {
 	public void channelActive(ChannelHandlerContext ctx) {
 		UserInfo[] infos = UserInfo();
 		for(UserInfo infoE : infos) {
+			System.out.println(infoE.toString());
 			ctx.write(infoE);
 		}
 		ctx.flush();
