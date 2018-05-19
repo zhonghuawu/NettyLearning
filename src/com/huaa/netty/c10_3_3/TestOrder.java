@@ -12,10 +12,10 @@ public class TestOrder {
     private StringWriter writer = null;
     private StringReader reader = null;
     private final static String CHARSET_NAME = "UTF-8";
-    
+
     private String endoce2XML(Order order) throws JiBXException, IOException {
-    	factory = BindingDirectory.getFactory(Order.class);
-    	writer = new StringWriter();
+        factory = BindingDirectory.getFactory(Order.class);
+        writer = new StringWriter();
         IMarshallingContext mctx = factory.createMarshallingContext();
         mctx.setIndent(2);
         mctx.marshalDocument(order, CHARSET_NAME, null, writer);
@@ -28,7 +28,7 @@ public class TestOrder {
     private Order decode2Order(String xmlBody) throws JiBXException {
         reader = new StringReader(xmlBody);
         IUnmarshallingContext uctx = factory.createUnmarshallingContext();
-        Order order = (Order)uctx.unmarshalDocument(reader);
+        Order order = (Order) uctx.unmarshalDocument(reader);
         return order;
     }
 
