@@ -72,10 +72,9 @@ public class WebSocketServerHandler extends SimpleChannelInboundHandler<Object> 
         String request = ((TextWebSocketFrame) frame).text();
         String log = String.format("%s received %s", ctx.channel(), request);
         System.out.println(log);
-        if (logger.isTraceEnabled()) {
-            logger.trace(log);
+        if (logger.isDebugEnabled()) {
+            logger.debug(log);
         }
-        logger.debug(log);
         ctx.channel().write(new TextWebSocketFrame(request + ", welcome to use Netty WebSocket service, now date: " + new java.util.Date().toString()));
     }
 
