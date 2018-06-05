@@ -30,8 +30,8 @@ public class NettyServer {
                         ch.pipeline().addLast("HeartBeatHandler", new HeartBeatRespHandler());
                     }
                 });
-        b.bind(NettyConstant.REMOTEIP, NettyConstant.PORT).sync();
-        System.out.println("Netty server start ok: " + (NettyConstant.REMOTEIP+":"+NettyConstant.PORT));
+        b.bind(NettyConstant.LOCAL_IP, NettyConstant.LOCAL_PORT).sync();
+        System.out.println("Netty server start ok: " + (NettyConstant.LOCAL_IP+":"+NettyConstant.LOCAL_PORT));
     }
 
     public static void main(String[] args) throws Exception {

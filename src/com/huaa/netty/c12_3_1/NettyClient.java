@@ -31,7 +31,7 @@ public class NettyClient {
                             ch.pipeline().addLast("HeartBeatHandler", new HeartBeatReqHandler());
                         }
                     });
-            ChannelFuture future = b.connect(new InetSocketAddress(host, port), new InetSocketAddress("127.0.0.1", 8080)).sync();
+            ChannelFuture future = b.connect(new InetSocketAddress(host, port)/*, new InetSocketAddress(NettyConstant.LOCAL_IP, NettyConstant.LOCAL_PORT)*/).sync();
             future.channel().closeFuture().sync();
         } finally {
             executor.execute(new Runnable() {
@@ -40,7 +40,7 @@ public class NettyClient {
                     try {
                         TimeUnit.SECONDS.sleep(5);
                         try {
-                            connect(NettyConstant.LOCALIP, NettyConstant.LOCAL_PORT);
+                            connect(NettyConstant.LOCAL_IP, NettyConstant.LOCAL_PORT);
                         } catch (Exception e) {
                             e.printStackTrace();
                         }
@@ -53,6 +53,6 @@ public class NettyClient {
     }
 
     public static void main(String[] args) throws Exception {
-        new NettyClient().connect(NettyConstant.REMOTEIP, NettyConstant.PORT);
+        new NettyClient().connect(NettyConstant.LOCAL_IP, NettyConstant.LOCAL_PORT);
     }
 }
