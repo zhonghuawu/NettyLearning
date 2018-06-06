@@ -3,11 +3,8 @@ package com.huaa.netty.c12_3_1;
 import io.netty.channel.ChannelHandlerAdapter;
 import io.netty.channel.ChannelHandlerContext;
 
-import java.util.Map;
-import java.util.concurrent.ConcurrentHashMap;
-
 public class LoginAuthRespHandler extends ChannelHandlerAdapter {
-    private Map<String, Boolean> nodeCheck = new ConcurrentHashMap<>();
+//    private Map<String, Boolean> nodeCheck = new ConcurrentHashMap<>();
 //    private String[] whitekList = {"127.0.0.1", "192.168.1.4"};
 
     public void channelRead(ChannelHandlerContext ctx, Object msg) throws Exception {

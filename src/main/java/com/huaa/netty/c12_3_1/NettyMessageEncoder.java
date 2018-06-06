@@ -1,20 +1,14 @@
 package com.huaa.netty.c12_3_1;
 
+import java.util.List;
+import java.util.Map;
+
 import io.netty.buffer.ByteBuf;
 import io.netty.buffer.Unpooled;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.handler.codec.MessageToMessageEncoder;
-import io.netty.handler.codec.marshalling.DefaultMarshallerProvider;
-import io.netty.handler.codec.marshalling.MarshallerProvider;
-import io.netty.handler.codec.marshalling.MarshallingEncoder;
-import org.jboss.marshalling.MarshallerFactory;
-import org.jboss.marshalling.Marshalling;
-import org.jboss.marshalling.MarshallingConfiguration;
 
-import java.util.List;
-import java.util.Map;
-
-public final class NettyMessageEncoder extends MessageToMessageEncoder {
+public final class NettyMessageEncoder extends MessageToMessageEncoder<NettyMessage> {
     private NettyMarshallingEncoder marshallingEncoder;
 
     public NettyMessageEncoder() {
@@ -22,7 +16,7 @@ public final class NettyMessageEncoder extends MessageToMessageEncoder {
     }
 
     @Override
-    protected void encode(ChannelHandlerContext ctx, Object message, List out) throws Exception {
+    protected void encode(ChannelHandlerContext ctx, NettyMessage message, List<Object> out) throws Exception {
         NettyMessage msg = null;
         if (message instanceof NettyMessage) {
             msg = (NettyMessage) message;

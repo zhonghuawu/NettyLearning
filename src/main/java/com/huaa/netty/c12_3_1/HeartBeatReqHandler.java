@@ -1,13 +1,10 @@
 package com.huaa.netty.c12_3_1;
 
-import io.netty.channel.ChannelHandlerAdapter;
-import io.netty.channel.ChannelHandlerContext;
-import io.netty.handler.codec.socks.SocksMessageType;
-import org.jibx.binding.Run;
-import sun.plugin2.main.server.HeartbeatThread;
-
 import java.util.concurrent.ScheduledFuture;
 import java.util.concurrent.TimeUnit;
+
+import io.netty.channel.ChannelHandlerAdapter;
+import io.netty.channel.ChannelHandlerContext;
 
 public class HeartBeatReqHandler extends ChannelHandlerAdapter {
     private volatile ScheduledFuture<?> heartBeat;

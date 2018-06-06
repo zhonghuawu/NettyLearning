@@ -1,6 +1,5 @@
 package com.huaa.netty.c11_3_2;
 
-import com.huaa.netty.c10_3_3.TestOrder;
 import io.netty.buffer.ByteBuf;
 import io.netty.buffer.Unpooled;
 import io.netty.channel.ChannelFuture;
@@ -11,8 +10,6 @@ import io.netty.handler.codec.http.*;
 import io.netty.handler.codec.http.websocketx.*;
 import io.netty.util.CharsetUtil;
 import org.apache.log4j.Logger;
-
-import java.util.logging.Level;
 
 import static io.netty.handler.codec.http.HttpUtil.isKeepAlive;
 import static io.netty.handler.codec.http.HttpUtil.setContentLength;

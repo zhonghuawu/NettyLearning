@@ -1,7 +1,5 @@
 package com.huaa.netty.c7_2_3;
 
-import java.awt.print.Book;
-
 import io.netty.bootstrap.Bootstrap;
 import io.netty.channel.ChannelFuture;
 import io.netty.channel.ChannelInitializer;

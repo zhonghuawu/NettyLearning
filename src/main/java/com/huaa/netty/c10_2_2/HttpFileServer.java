@@ -1,7 +1,6 @@
 package com.huaa.netty.c10_2_2;
 
 import io.netty.bootstrap.ServerBootstrap;
-import io.netty.channel.ChannelFuture;
 import io.netty.channel.ChannelInitializer;
 import io.netty.channel.EventLoopGroup;
 import io.netty.channel.nio.NioEventLoopGroup;
@@ -32,7 +31,7 @@ public class HttpFileServer {
                         ch.pipeline().addLast("fileServerHandler", new HttpFileServerHandler());
                     }
                 });
-            ChannelFuture future = b.bind("192.168.1.4", port).sync();
+            b.bind("192.168.1.4", port).sync();
             System.out.println("HTTP file directory server start, address is: "+"http://192.168.1.4"+port+url);
         } finally {
             bossGroup.shutdownGracefully();

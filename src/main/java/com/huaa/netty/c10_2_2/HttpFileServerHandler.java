@@ -6,6 +6,7 @@ import io.netty.handler.codec.http.FullHttpRequest;
 
 public class HttpFileServerHandler extends SimpleChannelInboundHandler<FullHttpRequest> {
 	
+	@SuppressWarnings("unused")
 	private static final String BASE_DIR = System.getProperty("user.dir") + "/src/main/java/com/huaa/netty/c10_2_2";
 	
 	// @Override
