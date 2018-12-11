@@ -8,10 +8,6 @@ import io.netty.channel.EventLoopGroup;
 import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.channel.socket.SocketChannel;
 import io.netty.channel.socket.nio.NioSocketChannel;
-import io.netty.handler.codec.MsgpackDecoder;
-import io.netty.handler.codec.MsgpackEncoder;
-import io.netty.handler.logging.LogLevel;
-import io.netty.handler.logging.LoggingHandler;
 
 public class EchoClient {
 	
@@ -37,8 +33,6 @@ public class EchoClient {
 					@Override
 					protected void initChannel(SocketChannel ch) throws Exception {
 						// TODO Auto-generated method stub
-						ch.pipeline().addLast("msgpack decoder", new MsgpackDecoder());
-						ch.pipeline().addLast("msgpack encoder", new MsgpackEncoder());
 						ch.pipeline().addLast(new EchoClientHandler(sendNumber));
 					}
 				});
